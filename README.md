@@ -10,7 +10,16 @@
 
 **离线打开 [site/index.html](site/index.html)** 就能使用：路径选择、章节搜索、37 案例库、三种利润计算器、AI 提示词复制、30 天执行打卡和 CSV 导出。网站没有登录，没有后台，不上传你的经营数据。
 
-GitHub Pages 发布后入口将是 `https://aipmandy.github.io/ai-china-content-commerce-handbook/`（**本仓库目前仅为本地交付，未声称已上线**）。
+在线网站：https://aipmandy.github.io/ai-china-content-commerce-handbook/ （GitHub Pages 自动发布）。
+
+## 作者与联系方式
+
+- **作者：AI 酋长 Andy**
+- **个人官网：** https://metaver.vip/
+- **咨询与陪跑服务：** https://metaver.vip/services
+- **个人微信：** `AIPMAndy`（在微信「添加朋友」中搜索，备注「内容电商」及你的项目情况）
+
+本教程免费开源；希望结合自己的项目做 AI 内容电商、咨询诊断和商家内容提效，可通过官网或微信联系。网站首页和每章/每个案例页也设有联系入口及微信号复制按钮。
 
 ## 为什么做这个项目
 
@@ -141,6 +150,6 @@ git push -u origin main
 
 由 **AI 酋长 Andy** 发起，项目愿景：**让更多人类通过 AI 实现财富自由和精神自由。** 免费开放完整方法、学习材料与工具，让更多人拿自己的真实数据去检验一笔生意能不能成立。
 
-[作者 GitHub](https://github.com/AIPMAndy) · [知识库](https://kb.metaver.vip/) · [品牌站](https://metaver.vip/)
+[作者 GitHub](https://github.com/AIPMAndy) · [个人官网](https://metaver.vip/) · [咨询服务](https://metaver.vip/services) · [知识库](https://kb.metaver.vip/) · 微信：`AIPMAndy`
 
 MIT License。素材、平台标识、品牌与第三方资料各归原权利人所有；项目案例以简要事实和来源链接呈现，不复制其原文全文。

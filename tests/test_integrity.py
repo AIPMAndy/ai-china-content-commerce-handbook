@@ -33,6 +33,23 @@ class TestEvidence(unittest.TestCase):
   self.assertEqual(len(list((S/'chapters').glob('*.html'))),30)
   self.assertEqual(len(list((S/'cases').glob('*.html'))),len(self.cases))
   self.assertTrue((S/'assets/model.js').exists())
+ def test_contact_entrypoints(self):
+  homepage=(S/'index.html').read_text('utf-8')
+  about=(S/'about.html').read_text('utf-8')
+  readme=(R/'README.md').read_text('utf-8')
+  builder=(R/'scripts'/'build_site.py').read_text('utf-8')
+  script=(S/'assets'/'contact.js').read_text('utf-8')
+  for page in (homepage,about,readme,builder):
+   self.assertIn('AIPMAndy',page)
+   self.assertIn('https://metaver.vip/',page)
+  self.assertIn('id="contact"',homepage)
+  self.assertIn('js-copy-wechat',homepage)
+  self.assertIn('navigator.clipboard.writeText',script)
+  for path in [*(S/'chapters').glob('*.html'),*(S/'cases').glob('*.html')]:
+   content=path.read_text('utf-8')
+   self.assertIn('AIPMAndy',content,path.name)
+   self.assertIn('https://metaver.vip/',content,path.name)
+   self.assertIn('contact.js',content,path.name)
  def test_daily_complete(self):
   self.assertEqual([x['day'] for x in self.days],list(range(1,31)))
   self.assertTrue(all(x['proof'] and x['gate'] for x in self.days))

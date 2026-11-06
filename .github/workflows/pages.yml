@@ -6,7 +6,7 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -31,6 +31,16 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Financial model tests
         run: node --test tests/test_model.js
+      - name: Sync generated chapter and case pages to main
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/chapters/ site/cases/
+          if ! git diff --cached --quiet; then
+            git commit -m "docs(site): synchronize generated author contact panels"
+            git push origin HEAD:main
+          fi
       - uses: actions/configure-pages@v5
         if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v3
