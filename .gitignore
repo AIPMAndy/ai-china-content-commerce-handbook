@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+playwright-report/
+test-results/
+worklogs/
+local-data/
+*.secret
+*.token
+*.key

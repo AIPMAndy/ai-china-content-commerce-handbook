@@ -1,0 +1,31 @@
+# C017｜MCM
+
+- 平台：**抖音**；模式：品牌直播
+- 时间：2026-06
+- 披露结果：618大促GMV超5800万元
+- AI 归因：**未披露AI应用**
+- 来源：[抖音电商2026年618优秀案例合集](https://school.jinritemai.com/doudian/web/course-series/cJkCAQLF7KpM/cJkCAQLF7KpMlJmYBvWtrP8c?from=search_operation&from_school=1&should_full_screen=1)
+- 来源类型：官方案例集合
+
+## 对方做了什么
+非遗跨界+品牌实景内容直播。
+
+## 我们能借鉴什么
+文化叙事适合升级内容质量，但品牌体量不可复制。
+
+## 不能直接推出的结论
+没有披露净利润、成本、退货与投流全量信息。 披露GMV、销售额或ROI不意味着净利润、同等预算或因果关系。
+
+## 30分钟复刻练习
+1. 选你自己的一件真实商品或一家有权合作的商户。
+2. 用手机拍下产品的一个真实卖点或消费者常见疑问。
+3. 只借鉴“非遗跨界”这项动作，做一条小样片或脚本。
+4. 写下具体投入与结果证据；没有数据就记录未知，不填案例的大品牌业绩。
+
+## 证据审计
+- 原始网址：https://school.jinritemai.com/doudian/web/course-series/cJkCAQLF7KpM/cJkCAQLF7KpMlJmYBvWtrP8c?from=search_operation&from_school=1&should_full_screen=1
+- 披露日期/时间：2026-06
+- 业绩披露方：官方案例集合
+- 结果口径：618大促GMV超5800万元
+- 是否确认 AI 因果：否。
+- 最近资料复核：2026-11-05（来源页检索，非财务审计）

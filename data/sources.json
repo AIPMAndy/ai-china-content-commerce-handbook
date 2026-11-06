@@ -1,0 +1,234 @@
+[
+  {
+    "id": "S01",
+    "title": "抖音电商官方学习中心",
+    "url": "https://school.jinritemai.com/doudian/web/home",
+    "date": "2026-11-05",
+    "kind": "官方平台教程/入口",
+    "limits": "适时更新，以商家后台实时版本为准"
+  },
+  {
+    "id": "S02",
+    "title": "抖音电商官方案例库",
+    "url": "https://school.jinritemai.com/doudian/web/ecomcase?from=zjnw&should_full_screen=1",
+    "date": "2026-11-05",
+    "kind": "官方案例集合",
+    "limits": "平台自行披露的 GMV/同比，未等同利润"
+  },
+  {
+    "id": "S03",
+    "title": "抖音电商2026年双11优秀案例合集",
+    "url": "https://school.jinritemai.com/doudian/web/course-series/cJsdtvxS1hfy?biz_from=case_ranking",
+    "date": "2026-11-05",
+    "kind": "官方案例集合",
+    "limits": "大促数据，含平台券与投流，非普通商家基线"
+  },
+  {
+    "id": "S04",
+    "title": "抖音电商2026年618优秀案例合集",
+    "url": "https://school.jinritemai.com/doudian/web/course-series/cJkCAQLF7KpM/cJkCAQLF7KpMlJmYBvWtrP8c?from=search_operation&from_school=1&should_full_screen=1",
+    "date": "2026-11-05",
+    "kind": "官方案例集合",
+    "limits": "仅作为打法示范"
+  },
+  {
+    "id": "S05",
+    "title": "抖音电商飞鱼互动 AI 服务商案例",
+    "url": "https://school.jinritemai.com/doudian/web/articlev0/aJdu1XRqtaJM?from=xcd&from_school=1&should_full_screen=1&should_hide_bottom_nav=1",
+    "date": "2026-01-23",
+    "kind": "官方宣传案例",
+    "limits": "具体结果是多因素联合，不归因于 AI 单一变量"
+  },
+  {
+    "id": "S06",
+    "title": "抖音电商成都视说物语案例",
+    "url": "https://school.jinritemai.com/doudian/web/article/aJmbq5rfE1mu?from=shop_xsjczdt&from_school=1&hide_nav_bar=1&should_full_screen=1&should_hide_bottom_nav=1",
+    "date": "2026-06-29",
+    "kind": "官方服务商案例",
+    "limits": "大客户、大促节点"
+  },
+  {
+    "id": "S07",
+    "title": "一本堂非遗铁锅案例（新华网）",
+    "url": "https://www.news.cn/tech/20251224/7a585dd5c0c0400cb25132074728fea8/c.html",
+    "date": "2025-12-24",
+    "kind": "媒体转述官方活动与商家发言",
+    "limits": "非 AI 应用的证据"
+  },
+  {
+    "id": "S08",
+    "title": "小红书电商官方招商与商家案例",
+    "url": "https://ark.xiaohongshu.com/merchant/login",
+    "date": "2026-11-05",
+    "kind": "官方品牌案例",
+    "limits": "页面包含历史年份案例，结果为官方自述"
+  },
+  {
+    "id": "S09",
+    "title": "小红书电商官网品牌案例",
+    "url": "https://ec.xiaohongshu.com/",
+    "date": "2026-11-05",
+    "kind": "官方品牌案例",
+    "limits": "GMV 由平台披露"
+  },
+  {
+    "id": "S10",
+    "title": "小红书电商学习中心",
+    "url": "https://school.xiaohongshu.com/",
+    "date": "2026-11-05",
+    "kind": "官方教程",
+    "limits": "规则变化以后台为准"
+  },
+  {
+    "id": "S11",
+    "title": "小红书千帆买手合作教程",
+    "url": "https://school.xiaohongshu.com/lesson/normal/b19973a777764a729a69008e2744f1eb",
+    "date": "2026-03-26",
+    "kind": "官方产品教程",
+    "limits": "资格/佣金依当前后台"
+  },
+  {
+    "id": "S12",
+    "title": "小红书橱窗教程",
+    "url": "https://school.xiaohongshu.com/lesson/normal/0c08f4b52fb546f091c6c1aaa138e892",
+    "date": "2026-04-02",
+    "kind": "官方产品教程",
+    "limits": "需按产品更新校验"
+  },
+  {
+    "id": "S13",
+    "title": "小红书李嗲劝退式带货（澎湃转载字母榜）",
+    "url": "https://m.thepaper.cn/newsDetail_forward_31176032",
+    "date": "2025-07-15",
+    "kind": "第三方报道/战报",
+    "limits": "没有可公开审计的净利润"
+  },
+  {
+    "id": "S14",
+    "title": "小红书董洁买手案例（澎湃）",
+    "url": "https://m.thepaper.cn/newsDetail_forward_27047251",
+    "date": "2024-04-15",
+    "kind": "第三方报道",
+    "limits": "明星案例不代表普通人"
+  },
+  {
+    "id": "S15",
+    "title": "快手电商2025第一季度财报",
+    "url": "https://ir.kuaishou.com/zh-hans/news-releases/news-release-details/kuaishoukejifabu2025niandiyijiduweijingshenhecaiwuyeji/",
+    "date": "2025-05-27",
+    "kind": "上市公司披露",
+    "limits": "平台总体规模非商户利润"
+  },
+  {
+    "id": "S16",
+    "title": "快手电商2025全年业绩",
+    "url": "https://ir.kuaishou.com/zh-hans/news-releases/news-release-details/kuaishoukejifabu2025niandisijidujiquanniancaiwuyeji",
+    "date": "2026-03-25",
+    "kind": "上市公司披露",
+    "limits": "报告包含平台 GMV"
+  },
+  {
+    "id": "S17",
+    "title": "快手范小洛及新商案例（福建商务厅）",
+    "url": "https://swt.fj.gov.cn/xxgk/jgzn/jgcs/dzswhxxhc/gzdt_598/202505/t20250508_6909681.htm",
+    "date": "2025-05-08",
+    "kind": "政府转引平台商家大会",
+    "limits": "披露 GMV，未披露利润"
+  },
+  {
+    "id": "S18",
+    "title": "快手泉州产业带（IT之家）",
+    "url": "https://www.ithome.com/0/846/016.htm",
+    "date": "2025-04-10",
+    "kind": "平台稿媒体刊载",
+    "limits": "商户匿名，样本不能独立复核"
+  },
+  {
+    "id": "S19",
+    "title": "快手义乌百货产业带（IT之家）",
+    "url": "https://www.ithome.com/0/966/207.htm",
+    "date": "2026-06-18",
+    "kind": "平台稿媒体刊载",
+    "limits": "商家部分匿名"
+  },
+  {
+    "id": "S20",
+    "title": "视频号微信小店商家访谈（新浪财经转载）",
+    "url": "https://finance.sina.com.cn/jjxw/2025-05-15/doc-inewrzcz2008138.shtml",
+    "date": "2025-05-15",
+    "kind": "媒体采访",
+    "limits": "当事人自述，未审计；涉及受监管商品不能照搬"
+  },
+  {
+    "id": "S21",
+    "title": "淘宝官方学习中心",
+    "url": "https://www.tbxuetang.cn/",
+    "date": "2026-11-05",
+    "kind": "官方培训",
+    "limits": "规则以商家后台为准"
+  },
+  {
+    "id": "S22",
+    "title": "淘宝直播2025商家运营白皮书（艾瑞）",
+    "url": "https://pdf.dfcfw.com/pdf/H3_AP202506231696135832_1.pdf",
+    "date": "2025-06-22",
+    "kind": "联合白皮书",
+    "limits": "研究/商家提供数据，关注指标定义"
+  },
+  {
+    "id": "S23",
+    "title": "AI生成合成内容标识办法（网信办）",
+    "url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",
+    "date": "2025-03-14",
+    "kind": "现行法规",
+    "limits": "2025-09-01实施；用户发布AI内容需主动声明"
+  },
+  {
+    "id": "S24",
+    "title": "直播电商监督管理办法（网信办）",
+    "url": "https://www.cac.gov.cn/2026-01/07/c_1769516655383334.htm",
+    "date": "2026-01-07",
+    "kind": "现行规章",
+    "limits": "2026-02-01实施，涵盖直播AI人物提示/信息展示/记录"
+  },
+  {
+    "id": "S25",
+    "title": "人工智能生成合成内容标识国家标准",
+    "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=301E0388CB75788DE06397BE0A0AE1B4",
+    "date": "2025-02-28",
+    "kind": "现行强制性标准",
+    "limits": "GB 45438-2025"
+  },
+  {
+    "id": "S26",
+    "title": "微信小店相关平台入口（微信开放平台）",
+    "url": "https://channels.weixin.qq.com/",
+    "date": "2026-11-05",
+    "kind": "平台入口",
+    "limits": "产品规则请通过后台查验，页面可能需登录"
+  },
+  {
+    "id": "S27",
+    "title": "小红书品牌案例及入驻类型",
+    "url": "https://ark.xiaohongshu.com/merchant/login",
+    "date": "2026-11-05",
+    "kind": "官方入驻页面",
+    "limits": "资质/保证金随类目变化"
+  },
+  {
+    "id": "S28",
+    "title": "抖音电商 DOU Case 2024",
+    "url": "https://school.jinritemai.com/doudian/web/article/aJD59mK8xqKD?from=dd&from_school=1",
+    "date": "2024-09-12",
+    "kind": "官方年度案例集",
+    "limits": "使用时注明时效"
+  },
+  {
+    "id": "S29",
+    "title": "周大福搜索运营案例（抖音电商）",
+    "url": "https://school.jinritemai.com/doudian/web/article/aHjgqmCfqmFX?from=buyin_message_jxlm",
+    "date": "2023-03-14",
+    "kind": "官方案例",
+    "limits": "历史案例，注意不代表当前结果"
+  }
+]
