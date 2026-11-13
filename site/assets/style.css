@@ -2,3 +2,25 @@
 
 /* Author contact: calm Apple-style conversion components, readable on mobile */
 .nav-contact{color:#315fd6!important;font-weight:800!important}.hero-author{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:20px;font-size:13px;color:#b9c9e3}.hero-author strong{color:#fff;letter-spacing:.3px}.hero-author a{color:#d1e1ff;border-bottom:1px solid rgba(209,225,255,.5)}.section-contact{padding-top:32px;padding-bottom:80px;scroll-margin-top:100px}.contact-panel{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,.7fr);align-items:center;gap:38px;padding:40px 42px;border:1px solid #dce7fb;background:linear-gradient(135deg,#fff 0%,#f3f7ff 100%);border-radius:26px;box-shadow:0 16px 46px rgba(29,58,111,.055)}.contact-panel h2,.detail .contact-panel h2{font-size:clamp(23px,2.7vw,32px);letter-spacing:-1px;line-height:1.25;margin:12px 0 10px}.contact-panel p,.detail .contact-panel p{font-size:14px;line-height:1.75;color:#57677f;margin:10px 0}.contact-panel .tag{letter-spacing:1.15px}.wechat-display{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px!important;color:#384965!important}.wechat-display strong{font-size:17px;letter-spacing:.5px;color:#1f3d7f}.contact-buttons{display:flex;flex-direction:column;align-items:stretch;gap:12px}.contact-buttons .btn{min-height:47px;padding:12px 14px}.contact-outline{background:#fff;color:#2f54a0;border:1px solid #b7c9ea}.contact-service-link{font-size:13px;color:#3055a8;font-weight:750;text-align:center}.contact-feedback{display:inline-block;font-size:12px;color:#147859;min-height:1em}.contact-panel-detail{margin-top:44px;margin-bottom:10px;padding:28px 30px;grid-template-columns:minmax(0,1.4fr) minmax(190px,.7fr);gap:25px}.contact-panel-detail h2{font-size:24px!important}.contact-panel-detail .contact-buttons .btn{font-size:13px}.footer a{color:#315cb7;text-decoration:underline;text-underline-offset:3px}@media(max-width:760px){.contact-panel,.contact-panel-detail{grid-template-columns:1fr;gap:15px;padding:27px 23px;border-radius:20px}.contact-buttons{gap:10px}.contact-panel-detail{margin-top:35px}.hero-author{font-size:12px}.section-contact{padding-top:16px}}@media(max-width:390px){.contact-panel,.contact-panel-detail{padding:21px 17px}.contact-buttons .btn{font-size:12px}}
+
+/* 2026-11-14 | Premium editorial system, shared with Xingjue knowledge sites. */
+:root{--ink:#1b2028;--muted:#626c79;--border:#e4e8ee;--bg:#f7f8fa;--blue:#2457b2;--violet:#2457b2;--soft:#eff3f8;--radius:16px}
+body{color:var(--ink);letter-spacing:-.005em}
+.nav{background:rgba(255,255,255,.94);border-bottom:1px solid #e9ecf0}
+.navin{min-height:70px}.brand{font-weight:760;letter-spacing:-.035em}
+.links a{font-weight:590}.links a:last-child{color:#2457b2}
+.hero{background:linear-gradient(126deg,#101821 0%,#1d2a3a 100%);padding:87px 0 76px}
+.gradient{color:#eef2f7;background:none;-webkit-text-fill-color:currentColor}
+.hero h1{max-width:960px;font-size:clamp(38px,5.6vw,70px);line-height:1.19;letter-spacing:-.055em;font-weight:720}
+.hero p{font-size:clamp(15px,1.6vw,18px);max-width:700px;color:#bdc7d3}
+.hero-author{padding-top:14px;border-top:1px solid rgba(255,255,255,.16);max-width:760px}
+.hero-metrics{max-width:720px;gap:18px;margin-top:40px}.hero-metrics b{font-size:26px;letter-spacing:-.05em}
+.btn{border-radius:12px;font-weight:650;box-shadow:none}.btn:hover{box-shadow:0 8px 22px rgba(21,35,56,.09)}
+.section{padding:78px 0}.section h2,.section-head h2{letter-spacing:-.045em;font-weight:710}
+.grid{gap:17px}.card,.resource,.day{box-shadow:none;border-color:#e6e9ee}
+.card:hover{border-color:#b9c8df;box-shadow:0 10px 28px rgba(25,39,61,.055)}
+.feature{border-left:2px solid #2457b2}.contact-panel{border:1px solid #dfe5ee;background:#fff;box-shadow:0 14px 40px rgba(20,35,54,.04)}
+.contact-panel .btn{width:100%}.contact-panel h2{font-weight:710}.contact-outline{background:#f7f9fc;color:#1d426f}
+.tag,.eyebrow{letter-spacing:.11em}.footer{background:#f9fafb}
+@media(max-width:960px){.links{gap:16px}.hero{padding:68px 0 58px}.section{padding:57px 0}}
+@media(max-width:640px){.hero h1{letter-spacing:-.04em}.hero-author{padding-top:12px;line-height:1.75}.hero-metrics{margin-top:32px}.btn{min-height:44px}.contact-panel{padding:24px 20px}}

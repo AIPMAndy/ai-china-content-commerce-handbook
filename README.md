@@ -16,6 +16,7 @@
 
 - **作者：AI 酋长 Andy**
 - **个人官网：** https://metaver.vip/
+- **公司官网（星觉科技）：** https://www.a6no1.cn/
 - **咨询与陪跑服务：** https://metaver.vip/services
 - **个人微信：** `AIPMAndy`（在微信「添加朋友」中搜索，备注「内容电商」及你的项目情况）
 
@@ -150,6 +151,6 @@ git push -u origin main
 
 由 **AI 酋长 Andy** 发起，项目愿景：**让更多人类通过 AI 实现财富自由和精神自由。** 免费开放完整方法、学习材料与工具，让更多人拿自己的真实数据去检验一笔生意能不能成立。
 
-[作者 GitHub](https://github.com/AIPMAndy) · [个人官网](https://metaver.vip/) · [咨询服务](https://metaver.vip/services) · [知识库](https://kb.metaver.vip/) · 微信：`AIPMAndy`
+[作者 GitHub](https://github.com/AIPMAndy) · [个人官网](https://metaver.vip/) · [星觉科技官网](https://www.a6no1.cn/) · [咨询服务](https://metaver.vip/services) · [知识库](https://kb.metaver.vip/) · 微信：`AIPMAndy`
 
 MIT License。素材、平台标识、品牌与第三方资料各归原权利人所有；项目案例以简要事实和来源链接呈现，不复制其原文全文。
