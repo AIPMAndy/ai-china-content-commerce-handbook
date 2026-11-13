@@ -27,6 +27,17 @@ jobs:
         run: |
           python scripts/build_data.py
           python scripts/build_site.py
+      - name: Build searchable Chinese PDF
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b poppler-utils
+          python -m pip install --disable-pip-version-check weasyprint==68.0
+          export PDF_EDITION_DATE=2026-11-14
+          python scripts/build_pdf.py
+          mkdir -p pdf
+          cp site/downloads/ai-china-content-commerce-handbook.pdf pdf/ai-china-content-commerce-handbook-guide.pdf
+          test -s pdf/ai-china-content-commerce-handbook-guide.pdf
+          pdftotext pdf/ai-china-content-commerce-handbook-guide.pdf - | grep -q 'AI 中国内容电商'
       - name: Python consistency tests
         run: python -m unittest discover -s tests -v
       - name: Financial model tests
@@ -36,9 +47,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/chapters/ site/cases/
+          git add site/chapters/ site/cases/ site/downloads/ pdf/
           if ! git diff --cached --quiet; then
-            git commit -m "docs(site): synchronize generated author contact panels"
+            git commit -m "docs(site): synchronize generated website and PDF publication assets"
             git push origin HEAD:main
           fi
       - uses: actions/configure-pages@v5

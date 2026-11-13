@@ -12,6 +12,8 @@
 
 在线网站：https://aipmandy.github.io/ai-china-content-commerce-handbook/ （GitHub Pages 自动发布）。
 
+**📘 下载完整版 PDF：** [GitHub Pages](https://aipmandy.github.io/ai-china-content-commerce-handbook/downloads/ai-china-content-commerce-handbook.pdf) · [仓库内 PDF](pdf/ai-china-content-commerce-handbook-guide.pdf)。PDF 由 `data/` 中的公开章节、案例、来源及行动计划自动生成，保留可点击出处和微信/双官网。
+
 ## 作者与联系方式
 
 - **作者：AI 酋长 Andy**
