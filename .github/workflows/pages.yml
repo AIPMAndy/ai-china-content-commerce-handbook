@@ -80,3 +80,37 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+  live_verify:
+    name: Verify actual Pages resources and PDF SHA
+    if: github.event_name != 'pull_request'
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Verify live HTML, sitemap, robots and PDF against repository edition
+        run: |
+          set -euo pipefail
+          BASE="https://aipmandy.github.io/ai-china-content-commerce-handbook"
+          local_pdf="site/downloads/ai-china-content-commerce-handbook.pdf"
+          test -s "$local_pdf"
+          expected="$(sha256sum "$local_pdf" | cut -d' ' -f1)"
+          revision="$(git rev-parse HEAD)"
+          pass=0
+          for attempt in $(seq 1 12); do
+            if curl -fsSL --max-time 25 "$BASE/?v=$revision" -o /tmp/live-home.html \
+               && grep -q 'downloads/ai-china-content-commerce-handbook.pdf' /tmp/live-home.html \
+               && curl -fsSL --max-time 25 "$BASE/downloads/ai-china-content-commerce-handbook.pdf?v=$revision" -o /tmp/live-handbook.pdf \
+               && [ "$(sha256sum /tmp/live-handbook.pdf | cut -d' ' -f1)" = "$expected" ] \
+               && curl -fsSL --max-time 25 "$BASE/sitemap.xml?v=$revision" -o /tmp/live-sitemap.xml \
+               && curl -fsSL --max-time 25 "$BASE/robots.txt?v=$revision" -o /tmp/live-robots.txt; then
+              pass=1; break
+            fi
+            sleep 10
+          done
+          [ "$pass" -eq 1 ] || { echo "Live Pages HTTP / PDF SHA failed"; exit 1; }
+          grep -q 'aipmandy.github.io/ai-china-content-commerce-handbook' /tmp/live-sitemap.xml
+          echo "LIVE VERIFIED $BASE/ and PDF SHA256=$expected"
