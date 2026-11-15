@@ -21,4 +21,28 @@ class PublicWebsiteQualityTests(unittest.TestCase):
         self.assertTrue((SITE / "llms.txt").exists())
         self.assertIn("Sitemap:", (SITE / "robots.txt").read_text(encoding="utf-8"))
 
+    def test_all_generated_chapters_and_cases_expose_grounded_jsonld(self):
+        import json
+        import re
+        import html
+        for folder in ("chapters", "cases"):
+            pages = sorted((SITE / folder).glob("*.html"))
+            self.assertGreater(len(pages), 0)
+            for page in pages:
+                text = page.read_text(encoding="utf-8")
+                with self.subTest(path=str(page.relative_to(SITE))):
+                    match = re.search(r'<script type="application/ld\+json">([^<]+)</script>', text)
+                    self.assertIsNotNone(match, "missing machine-readable evidence")
+                    entity = json.loads(html.unescape(match.group(1)))
+                    self.assertEqual(entity["@type"], "Article")
+                    self.assertEqual(entity["author"]["url"], "https://metaver.vip/")
+                    self.assertEqual(entity["publisher"]["url"], "https://www.a6no1.cn/")
+                    self.assertEqual(entity["mainEntityOfPage"]["@id"], "https://aipmandy.github.io/ai-china-content-commerce-handbook/" + str(page.relative_to(SITE)).replace("\\", "/"))
+                    self.assertTrue(entity["citation"])
+                    self.assertNotIn("datePublished", entity, "source ledger date is not publication date")
+                    self.assertIn("来源台账日期", text)
+                    if folder == "cases":
+                        self.assertIn("第三方披露案例", text)
+                        self.assertIn("台账日期不等于本次实时核验日期", text)
+
 if __name__ == "__main__": unittest.main()
