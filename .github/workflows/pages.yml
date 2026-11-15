@@ -113,4 +113,21 @@ jobs:
           done
           [ "$pass" -eq 1 ] || { echo "Live Pages HTTP / PDF SHA failed"; exit 1; }
           grep -q 'aipmandy.github.io/ai-china-content-commerce-handbook' /tmp/live-sitemap.xml
+          for rel in chapters/01.html cases/C001.html; do
+            local="site/$rel"
+            target="/tmp/live-$(basename "$rel")"
+            test -s "$local"
+            ok=0
+            for attempt in $(seq 1 12); do
+              if curl -fsSL --max-time 25 "$BASE/$rel?v=$revision" -o "$target" \
+                 && [ "$(sha256sum "$target" | cut -d' ' -f1)" = "$(sha256sum "$local" | cut -d' ' -f1)" ]; then
+                ok=1; break
+              fi
+              sleep 10
+            done
+            [ "$ok" -eq 1 ] || { echo "Live generated page differs: $rel"; exit 1; }
+            grep -q 'application/ld+json' "$target"
+            grep -q '来源台账日期' "$target"
+            echo "LIVE VERIFIED generated page $BASE/$rel"
+          done
           echo "LIVE VERIFIED $BASE/ and PDF SHA256=$expected"
