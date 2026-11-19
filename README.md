@@ -12,6 +12,8 @@
 
 在线网站：https://aipmandy.github.io/ai-china-content-commerce-handbook/ （GitHub Pages 自动发布）。
 
+**经营测算防误判**：三种模型禁止把留空的成本项自动视为 0，订单与客户数须为非负整数；支持下载「本次测算明细 CSV」核对逐项输入与结果。所有默认数据均为教学假设，不能视为真实客户经营结果；CSV 不上传服务器。官方资料来源页显示的是历史台账日期，**不是实时核验**。
+
 **📘 下载完整版 PDF：** [GitHub Pages](https://aipmandy.github.io/ai-china-content-commerce-handbook/downloads/ai-china-content-commerce-handbook.pdf) · [仓库内 PDF](pdf/ai-china-content-commerce-handbook-guide.pdf)。PDF 由 `data/` 中的公开章节、案例、来源及行动计划自动生成，保留可点击出处和微信/双官网。
 
 ## 作者与联系方式

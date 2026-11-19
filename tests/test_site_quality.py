@@ -45,4 +45,15 @@ class PublicWebsiteQualityTests(unittest.TestCase):
                         self.assertIn("第三方披露案例", text)
                         self.assertIn("台账日期不等于本次实时核验日期", text)
 
+    def test_calculator_export_and_historical_source_date(self):
+        homepage=(SITE / "index.html").read_text(encoding="utf-8")
+        script=(SITE / "assets" / "app.js").read_text(encoding="utf-8")
+        model=(SITE / "assets" / "model.js").read_text(encoding="utf-8")
+        self.assertIn('id="exportCalc"', homepage)
+        self.assertIn("lastCalc=null", script)
+        self.assertIn("缺失项不能自动当作0", script)
+        self.assertIn("来源台账日期", script)
+        self.assertIn("function whole(n,name)", model)
+        self.assertIn("内容电商经济账-教学测算.csv", script)
+
 if __name__ == "__main__": unittest.main()

@@ -24,3 +24,6 @@ body{color:var(--ink);letter-spacing:-.005em}
 .tag,.eyebrow{letter-spacing:.11em}.footer{background:#f9fafb}
 @media(max-width:960px){.links{gap:16px}.hero{padding:68px 0 58px}.section{padding:57px 0}}
 @media(max-width:640px){.hero h1{letter-spacing:-.04em}.hero-author{padding-top:12px;line-height:1.75}.hero-metrics{margin-top:32px}.btn{min-height:44px}.contact-panel{padding:24px 20px}}
+
+/* 经营模型的可核验下载操作与失效输入反馈 */
+.calc-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}.calc-actions .btn{min-height:42px}.calc-export{background:transparent;border-color:#b2c2eb;color:#233c83}.calc-actions button:disabled{opacity:.43;cursor:not-allowed;box-shadow:none;transform:none}.calc-results .bad{color:#9b2525;background:#fff2f2;border:1px solid #f7d1d1;padding:12px;border-radius:12px} .resources .resource p{overflow-wrap:anywhere}

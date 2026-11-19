@@ -30,3 +30,15 @@ test('完整SKU教学模拟数与经济账模型一致',()=>{
  const x=m.merchant({orders:100,price:69,cost:24,shipping:6,packaging:1,refundRate:10,platformRate:4,affiliateRate:0,returnLoss:3,ads:400,labor:200,fixed:0});
  assert.equal(x.gmv,6900);assert.equal(x.netRevenue,6210);assert.equal(x.net,2471.6);
 });
+
+test('空白输入不能被当作真实零成本或零订单',()=>{
+ assert.throws(()=>m.merchant({...base,cost:''}),/不能为空/);
+ assert.throws(()=>m.merchant({...base,orders:'  '}),/不能为空/);
+ assert.throws(()=>m.creator({orders:null,price:100,refundRate:0,commissionRate:10,samples:0,content:0,ads:0,other:0}),/不能为空/);
+});
+test('订单和客户数量必须是非负安全整数，金额仍可为小数',()=>{
+ assert.throws(()=>m.merchant({...base,orders:1.5}),/整数/);
+ assert.throws(()=>m.creator({orders:1.5,price:100,refundRate:0,commissionRate:10,samples:0,content:0,ads:0,other:0}),/整数/);
+ assert.throws(()=>m.service({clients:2.5,fee:4500,hours:20,hourly:100,outsourcing:500,tools:500,acquisition:400,other:100}),/整数/);
+ assert.equal(m.merchant({...base,orders:1,cost:40.5}).gmv,99);
+});
