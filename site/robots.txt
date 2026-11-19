@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://aipmandy.github.io/ai-china-content-commerce-handbook/sitemap.xml
