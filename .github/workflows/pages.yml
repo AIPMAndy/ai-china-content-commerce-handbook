@@ -18,6 +18,43 @@ jobs:
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect changes to authoritative PDF source
+        id: pdf_inputs
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BEFORE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Manual release: full PDF regeneration required"
+          else
+            if [ "$EVENT_NAME" = "pull_request" ]; then
+              base="$BASE_SHA"
+            else
+              base="$BEFORE_SHA"
+            fi
+            if ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              echo "Unknown baseline: full PDF regeneration required"
+            else
+              git diff --name-only "$base" "$HEAD_SHA" > /tmp/site-change-paths
+              if grep -Eq '^(data/|content/|research/|prompts/|docs/|examples/|templates/|pdf/|site/downloads/|scripts/(build_data|build_pdf|pdf_quality_gate)\.py)' /tmp/site-change-paths; then
+                echo "changed=true" >> "$GITHUB_OUTPUT"
+                echo "PDF source changed: regenerate + full-page QA"
+              else
+                echo "changed=false" >> "$GITHUB_OUTPUT"
+                echo "Site-only change: reuse byte-identical archived PDF; still run full-page QA"
+                test -s site/downloads/ai-china-content-commerce-handbook.pdf
+                test -s pdf/ai-china-content-commerce-handbook-guide.pdf
+                cmp site/downloads/ai-china-content-commerce-handbook.pdf pdf/ai-china-content-commerce-handbook-guide.pdf
+              fi
+            fi
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -33,6 +70,7 @@ jobs:
       - name: Financial model tests
         run: node --test tests/test_model.js
       - name: Build searchable Chinese PDF
+        if: steps.pdf_inputs.outputs.changed == 'true'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y fonts-noto-cjk libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b poppler-utils
