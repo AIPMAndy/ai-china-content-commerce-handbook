@@ -15,6 +15,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,6 +28,10 @@ jobs:
         run: |
           python scripts/build_data.py
           python scripts/build_site.py
+      - name: Python consistency tests
+        run: python -m unittest discover -s tests -v
+      - name: Financial model tests
+        run: node --test tests/test_model.js
       - name: Build searchable Chinese PDF
         run: |
           sudo apt-get update -qq
@@ -50,10 +55,6 @@ jobs:
           path: artifacts/pdf-qa/
           if-no-files-found: warn
           retention-days: 30
-      - name: Python consistency tests
-        run: python -m unittest discover -s tests -v
-      - name: Financial model tests
-        run: node --test tests/test_model.js
       - name: Chromium three-viewport browser and real CSV regression
         run: |
           npm install --no-save playwright@1.56.1
