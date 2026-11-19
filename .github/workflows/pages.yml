@@ -54,6 +54,20 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Financial model tests
         run: node --test tests/test_model.js
+      - name: Chromium three-viewport browser and real CSV regression
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+          python -m http.server 8765 --directory site > /tmp/content-commerce-http.log 2>&1 &
+          node tests/browser_smoke.cjs
+      - name: Store reproducible browser screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: content-commerce-browser-qa
+          path: artifacts/browser-qa/
+          if-no-files-found: warn
+          retention-days: 30
       - name: Sync generated chapter and case pages to main
         if: github.event_name == 'push'
         run: |
