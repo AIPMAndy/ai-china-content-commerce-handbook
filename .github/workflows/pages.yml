@@ -127,7 +127,7 @@ jobs:
           done
           [ "$pass" -eq 1 ] || { echo "Live Pages HTTP / PDF SHA failed"; exit 1; }
           grep -q 'aipmandy.github.io/ai-china-content-commerce-handbook' /tmp/live-sitemap.xml
-          for rel in chapters/01.html cases/C001.html; do
+          for rel in index.html assets/app.js assets/model.js assets/style.css sitemap.xml robots.txt chapters/01.html cases/C001.html; do
             local="site/$rel"
             target="/tmp/live-$(basename "$rel")"
             test -s "$local"
@@ -140,8 +140,10 @@ jobs:
               sleep 10
             done
             [ "$ok" -eq 1 ] || { echo "Live generated page differs: $rel"; exit 1; }
-            grep -q 'application/ld+json' "$target"
-            grep -q '来源台账日期' "$target"
-            echo "LIVE VERIFIED generated page $BASE/$rel"
+            if [[ "$rel" == chapters/* || "$rel" == cases/* ]]; then
+              grep -q 'application/ld+json' "$target"
+              grep -q '来源台账日期' "$target"
+            fi
+            echo "LIVE VERIFIED byte-exact $BASE/$rel"
           done
           echo "LIVE VERIFIED $BASE/ and PDF SHA256=$expected"
