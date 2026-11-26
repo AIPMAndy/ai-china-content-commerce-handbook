@@ -8,7 +8,8 @@ const assert = require('node:assert/strict');
  fs.mkdirSync(proof,{recursive:true});
  try{
   for(const width of [360,390,1280]){
-   const page=await browser.newPage({viewport:{width,height:850},acceptDownloads:true,reducedMotion:'reduce'});
+   const context=await browser.newContext({viewport:{width,height:850},acceptDownloads:true,reducedMotion:'reduce'});
+   const page=await context.newPage();
    const errors=[];page.on('pageerror',error=>errors.push(error.message));
    await page.goto('http://127.0.0.1:8765/',{waitUntil:'load'});
    await page.waitForSelector('#chapterGrid .card');
@@ -46,7 +47,7 @@ const assert = require('node:assert/strict');
    assert.equal(await action.evaluate(node=>node===document.activeElement),true,'focus survives progress update');
    assert.equal(await page.evaluate(k=>localStorage.getItem(k),key),'[1]');
    await page.locator('#planGrid button').nth(1).click();
-   const other=await page.context().newPage();
+   const other=await context.newPage();
    await other.goto('http://127.0.0.1:8765/');
    await other.evaluate(k=>localStorage.setItem(k,'[1,3]'),key);
    await page.waitForFunction(()=>document.querySelector('#progressText').textContent.includes('2 / 30'));
@@ -75,7 +76,7 @@ const assert = require('node:assert/strict');
    assert.deepEqual(errors,[],'browser console errors');
    if(width===390||width===1280)await page.locator('#tools').screenshot({path:path.join(proof,'calc-'+width+'.png')});
    console.log('PASS viewport='+width+' source=29 missing-data=blocked fractional-orders=blocked CSV=verified');
-   await page.close();
+   await context.close();
   }
  }finally{await browser.close()}
 })().catch(error=>{console.error(error);process.exit(1)});
