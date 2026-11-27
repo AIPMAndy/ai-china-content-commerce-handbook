@@ -1,7 +1,17 @@
 (function(){'use strict';
 const d=window.HANDBOOK_DATA;const $=q=>document.querySelector(q),el=(tag,cls,txt)=>{let x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=String(txt);return x};const money=n=>(Number(n)||0).toLocaleString('zh-CN',{style:'currency',currency:'CNY',maximumFractionDigits:2});const source=id=>d.sources.find(s=>s.id===id);let selectedRoute='service',calcMode='merchant',calcValues={},lastCalc=null;
-function safeGet(key,fallback){try{return JSON.parse(localStorage.getItem(key))||fallback}catch{return fallback}}function safeSet(key,val){try{localStorage.setItem(key,JSON.stringify(val))}catch{}}
-const done=new Set(safeGet('china-commerce-progress-v1',[]));
+const progressKey='china-commerce-progress-v1';
+const validDays=new Set(d.plan30.map(day=>day.day));
+function readProgress(){
+ try{
+  const raw=localStorage.getItem(progressKey);
+  const values=raw===null?[]:JSON.parse(raw);
+  if(!Array.isArray(values)||values.some(day=>!validDays.has(day))||new Set(values).size!==values.length)throw new Error('invalid progress');
+  return {ok:true,days:new Set(values)};
+ }catch{return {ok:false};}
+}
+const done=new Set();
+function replaceProgress(days){done.clear();days.forEach(day=>done.add(day))}
 function anchor(href,text,cls=''){const x=el('a',cls,text);x.href=href;return x}
 function asCard(){return el('div','card')}
 function renderRoutes(){const box=$('#routeGrid');d.routes.forEach(r=>{const b=el('button','card card-button'+(r.id===selectedRoute?' selected':''));b.type='button';const meta=el('div','meta',r.platform);const t=el('h3','',r.title);const p=el('p','',r.intro);const f=el('div','foot',r.buyer);b.append(meta,t,p,f);b.addEventListener('click',()=>{selectedRoute=r.id;box.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');renderRouteGuide()});box.append(b)});renderRouteGuide()}
@@ -17,7 +27,55 @@ async function showCopy(btn,text){
  setTimeout(()=>{btn.textContent=previous;btn.disabled=false},1600);
 }
 function renderPrompts(){let stage=$('#promptStage');[...new Set(d.prompts.map(x=>x.stage))].forEach(p=>{let o=el('option','',p);o.value=p;stage.append(o)});function go(){const q=$('#promptSearch').value.toLowerCase(),p=stage.value;let rows=d.prompts.filter(x=>(!p||x.stage===p)&&[x.title,x.text].join(' ').toLowerCase().includes(q));$('#promptCount').textContent=`${rows.length}/${d.prompts.length} 个`;filterMap($('#promptGrid'),rows,p=>{let x=asCard();x.append(el('div','meta',`${p.id} · ${p.stage}`),el('h3','',p.title),el('p','',p.text.slice(p.text.indexOf('\n\n')+2,p.text.indexOf('\n\n')+95)+'…'));let btn=el('button','btn small','复制提示词');btn.type='button';btn.style.marginTop='14px';btn.addEventListener('click',()=>showCopy(btn,p.text));x.append(btn);return x})}[$('#promptSearch'),stage].forEach(x=>x.addEventListener(x.tagName==='INPUT'?'input':'change',go));go()}
-function renderPlan(){const box=$('#planGrid');d.plan30.forEach(day=>{const b=el('button','day'+(done.has(day.day)?' done':''));b.type='button';b.append(el('strong','',`DAY ${day.day.toString().padStart(2,'0')}${done.has(day.day)?' ✓':''}`),el('span','',day.title));b.onclick=()=>showDay(day);box.append(b)});function update(){const v=done.size;$('#progressText').textContent=`${v} / 30 已完成`;$('#progressFill').style.width=(v/d.plan30.length*100)+'%';[...box.children].forEach((b,i)=>{b.classList.toggle('done',done.has(i+1));b.firstChild.textContent=`DAY ${(i+1).toString().padStart(2,'0')}${done.has(i+1)?' ✓':''}`})}function showDay(day){const v=$('#dayDetail');v.textContent='';v.append(el('strong','',`DAY ${day.day}｜${day.title}`),el('p','',`验收证据：${day.proof}`),el('p','',`通关条件：${day.gate}`));const b=el('button','btn small',done.has(day.day)?'撤销完成':'标记完成');b.type='button';b.onclick=()=>{done.has(day.day)?done.delete(day.day):done.add(day.day);safeSet('china-commerce-progress-v1',[...done]);update();showDay(day)};v.append(b)}showDay(d.plan30[0]);update();$('#exportProgress').onclick=()=>{const csv=[['天数','任务','验收证据','完成情况'],...d.plan30.map(day=>[day.day,day.title,day.proof,done.has(day.day)?'完成':'未完成'])];downloadCSV('30天执行打卡.csv',csv)}}
+function renderPlan(){
+ const box=$('#planGrid'),detail=$('#dayDetail'),exportBtn=$('#exportProgress');
+ const status=el('p','progress-status');status.setAttribute('role','status');status.style.marginTop='12px';box.after(status);
+ let selected=d.plan30[0],known=false,action=null;
+ d.plan30.forEach(day=>{
+  const b=el('button','day');b.type='button';b.append(el('strong'),el('span','',day.title));
+  b.onclick=()=>showDay(day);box.append(b);
+ });
+ function update(){
+  $('#progressText').textContent=known?done.size+' / '+d.plan30.length+' 已完成':'进度暂不可读取';
+  $('#progressFill').style.width=(known?done.size/d.plan30.length*100:0)+'%';
+  [...box.children].forEach((b,i)=>{
+   const day=d.plan30[i].day,checked=known&&done.has(day);
+   b.classList.toggle('done',checked);b.firstChild.textContent='DAY '+String(day).padStart(2,'0')+(checked?' ✓':'');
+   b.setAttribute('aria-pressed',String(day===selected.day));
+  });
+  if(action){action.disabled=!known;action.textContent=known?(done.has(selected.day)?'撤销完成':'标记完成'):'暂不可修改'}
+  exportBtn.disabled=!known;
+ }
+ function refresh(message=''){
+  const state=readProgress();known=state.ok;
+  if(known)replaceProgress(state.days);
+  status.textContent=known?message:'无法读取打卡记录。原数据未被覆盖；请检查浏览器存储权限或备份后修复记录。';
+  update();return state;
+ }
+ function showDay(day){
+  selected=day;detail.textContent='';
+  detail.append(el('strong','','DAY '+day.day+'｜'+day.title),el('p','','验收证据：'+day.proof),el('p','','通关条件：'+day.gate));
+  action=el('button','btn small');action.type='button';
+  action.onclick=()=>{
+   const previouslyKnown=known,wasDone=done.has(day.day);
+   const current=refresh();
+   if(!current.ok)return;
+   if(!previouslyKnown||wasDone!==done.has(day.day)){status.textContent='打卡记录已在其他页面变化，请确认当前状态后再操作。';return}
+   const next=new Set(done);wasDone?next.delete(day.day):next.add(day.day);
+   try{localStorage.setItem(progressKey,JSON.stringify([...next]));}
+   catch{status.textContent='保存失败，未标记完成或撤销；请检查存储空间及权限后重试。';return}
+   refresh('已保存本机打卡记录。');
+  };
+  detail.append(action);update();
+ }
+ showDay(selected);refresh();
+ window.addEventListener('storage',event=>{if(event.key===progressKey||event.key===null)refresh('已同步其他页面的打卡记录。')});
+ exportBtn.onclick=()=>{
+  if(!refresh().ok)return;
+  const csv=[['天数','任务','验收证据','完成情况'],...d.plan30.map(day=>[day.day,day.title,day.proof,done.has(day.day)?'完成':'未完成'])];
+  downloadCSV('30天执行打卡.csv',csv);
+ };
+}
 function downloadCSV(name,rows){const escapeCell=x=>'"'+String(x??'').replace(/"/g,'""').replace(/^[=+@\-]/,m=>"'"+m)+'"';const csv='\ufeff'+rows.map(r=>r.map(escapeCell).join(',')).join('\r\n');const u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),500)}
 const MODELS={merchant:{name:'商家自营：付款、退货、物流、获客全部计入',fields:[['orders','支付订单数',100],['price','客单价 ¥',99],['cost','每保留订单采购成本 ¥',40],['shipping','每原订单发货成本 ¥',7],['packaging','每原订单包材成本 ¥',1],['refundRate','退款比例 %',12],['platformRate','平台费率 %',4],['affiliateRate','达人/分销佣金 %',0],['returnLoss','每退款订单额外损耗 ¥',5],['ads','广告总成本 ¥',800],['labor','人工成本 ¥',300],['fixed','其他固定费用 ¥',100]]},creator:{name:'达人佣金：退货后结佣，再减掉内容成本',fields:[['orders','支付订单数',60],['price','客单价 ¥',120],['refundRate','退款比例 %',15],['commissionRate','结佣比例 %',15],['samples','样品成本 ¥',150],['content','内容制作成本 ¥',300],['ads','投流成本 ¥',0],['other','其他费用 ¥',50]]},service:{name:'B端内容服务：按客户收费减去真实交付成本',fields:[['clients','付费客户数',2],['fee','单客户服务费 ¥',4500],['hours','单客户交付工时',25],['hourly','每小时人工成本 ¥',80],['outsourcing','单客户外包成本 ¥',600],['tools','工具月费 ¥',300],['acquisition','客户获客费用 ¥',500],['other','其他固定费用 ¥',200]]}};
 function calc(){
