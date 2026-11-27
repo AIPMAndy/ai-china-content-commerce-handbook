@@ -1,0 +1,94 @@
+# AI 中国内容电商保姆级实战教程 🇨🇳
+
+> 🛒 AI 中国内容电商保姆级实战教程：30 章教程、37 个真实案例、26 套 AI 提示词与三种利润计算器，覆盖抖音、快手、小红书、视频号与淘宝直播；从选品、SKU 经济账到直播脚本、退货与现金流，强调真实成交验证。
+
+- 作者：AI酋长Andy（AIPMAndy），官网 https://metaver.vip/
+- 开源仓库：https://github.com/AIPMAndy/ai-china-content-commerce-handbook
+- 在线地址：https://aipmandy.github.io/ai-china-content-commerce-handbook/
+- 许可：MIT
+- 语言：中文（zh-CN）
+- 最近更新：2026-11-27
+
+## 这是什么
+
+!Licensehttps://img.shields.io/badge/license-MIT-blue !docshttps://img.shields.io/badge/chapters-30-5369da !caseshttps://img.shields.io/badge/realcases-37-5369da !promptshttps://img.shields.io/badge/AIprompts-26-5369da
+离线打开 site/index.htmlsite/index.html 就能使用：路径选择、章节搜索、37 案例库、三种利润计算器、AI 提示词复制、30 天执行打卡和 CSV 导出。网站没有登录，没有后台，不上传你的经营数据。
+
+## 主要页面
+
+- [如何使用｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/about.html)
+- [一本堂非遗铁锅｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C001.html)
+- [淳壹亿｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C002.html)
+- [合夏｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C003.html)
+- [苗龙御坊｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C004.html)
+- [哈曼卡顿×视说物语｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C005.html)
+- [飞利浦×视说物语｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C006.html)
+- [百雀羚｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C007.html)
+- [帮宝适｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C008.html)
+- [徕芬高速吹风机｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C009.html)
+- [CODEMINT纨素之肤｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C010.html)
+- [黛莱皙｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C011.html)
+- [喵梵思｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C012.html)
+- [蜗牛阅读｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C013.html)
+- [小北珠宝｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C014.html)
+- [秦磊男装｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C015.html)
+- [巴布豆学步鞋｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C016.html)
+- [MCM｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C017.html)
+- [大疆｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C018.html)
+- [周大福｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C019.html)
+- [ALMOND ROCKS｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C020.html)
+- [裘真植鞣皮具｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C021.html)
+- [blacknini尹华夫｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C022.html)
+- [JSC｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C023.html)
+- [香木雅舍｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C024.html)
+- [宜氧家具｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C025.html)
+- [RED CHAMBER｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C026.html)
+- [世大家水杯｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C027.html)
+- [moodytiger｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C028.html)
+- [头厨地域早餐｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C029.html)
+- [李嗲｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C030.html)
+- [范小洛老板娘｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C031.html)
+- [泉州匿名男装商家A｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C032.html)
+- [义乌百货商家（匿名）｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C033.html)
+- [方源（化名）｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C034.html)
+- [阿骏（化名）｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C035.html)
+- [UR官方旗舰店｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C036.html)
+- [喜临门旗舰店｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/cases/C037.html)
+- [认清四种赚钱模型｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/chapters/01.html)
+- [内容电商成交公式｜AI中国内容电商实战手册](https://aipmandy.github.io/ai-china-content-commerce-handbook/chapters/02.html)
+
+## 内容目录
+
+- 先打开完整网站
+- 作者与联系方式
+- 为什么做这个项目
+- 5 分钟选对自己的经营路线
+- 开始之前的三项任务（40 分钟）
+- 完整目录
+- 先把完整示例走一遍
+- 先学这7章
+- 37个案例的正确读法
+- AI最应该用在哪
+- 五条硬性口径
+- 开源项目怎么运行
+- 推荐的 GitHub 发布步骤
+- 90天商业化路线
+- 更新案例与贡献
+- 作者与愿景
+
+## 关键事实
+
+- 名称：AI 中国内容电商保姆级实战教程 🇨🇳
+- 类型：中文开源项目 / 学习手册
+- 内容规模：30 章
+- 许可：MIT
+- 语言：中文
+- 最近更新：2026-11-27
+- 仓库：https://github.com/AIPMAndy/ai-china-content-commerce-handbook
+
+## 相关链接
+
+- [作者官网](https://metaver.vip/)
+- [GitHub 主页](https://github.com/AIPMAndy/AIPMAndy)
+- [开源总目录](https://aipmandy.github.io/)
+- [机器可读摘要](https://aipmandy.github.io/ai-china-content-commerce-handbook/llms.txt)

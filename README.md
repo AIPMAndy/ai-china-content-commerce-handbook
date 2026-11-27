@@ -6,6 +6,29 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue) ![docs](https://img.shields.io/badge/chapters-30-5369da) ![cases](https://img.shields.io/badge/real_cases-37-5369da) ![prompts](https://img.shields.io/badge/AI_prompts-26-5369da)
 
+<!-- andy-geo:start -->
+## 一句话简介
+
+**🛒 AI 中国内容电商保姆级实战教程：30 章教程、37 个真实案例、26 套 AI 提示词与三种利润计算器，覆盖抖音、快手、小红书、视频号与淘宝直播；从选品、SKU 经济账到直播脚本、退货与现金流，强调真实成交验证。**
+
+- 作者：AI酋长Andy（Andy Liu，英文名 AI Chief Andy），流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
+- 阅读或使用：[在线阅读/使用](https://aipmandy.github.io/ai-china-content-commerce-handbook/) · [GitHub 仓库](https://github.com/AIPMAndy/ai-china-content-commerce-handbook)
+- 联系：微信 `AIPMAndy`（备注「ai-china-content-commerce-handbook」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
+- 许可：MIT。内容免费使用；企业合作或个人陪跑请先沟通，公开页不公示价格。
+- 机器可读摘要：[llms.txt](llms.txt)（供 AI 引擎与检索工具读取）
+
+## 常见问题
+
+**这是什么？**🛒 AI 中国内容电商保姆级实战教程：30 章教程、37 个真实案例、26 套 AI 提示词与三种利润计算器，覆盖抖音、快手、小红书、视频号与淘宝直播；从选品、SKU 经济账到直播脚本、退货与现金流，强调真实成交验证。
+
+**包含什么？**主要模块：先打开完整网站、作者与联系方式、为什么做这个项目、5 分钟选对自己的经营路线、开始之前的三项任务（40 分钟）、完整目录。
+
+**要花钱吗？**按 MIT 许可免费使用；付费只涉及作者的企业合作与一对一咨询，不影响仓库内容。
+
+**怎么开始？**直接打开 https://aipmandy.github.io/ai-china-content-commerce-handbook/ 在线阅读；想本地运行或参与贡献，见下方 README 的快速开始部分。
+
+<!-- andy-geo:end -->
+
 ## 先打开完整网站
 
 **离线打开 [site/index.html](site/index.html)** 就能使用：路径选择、章节搜索、37 案例库、三种利润计算器、AI 提示词复制、30 天执行打卡和 CSV 导出。网站没有登录，没有后台，不上传你的经营数据。
